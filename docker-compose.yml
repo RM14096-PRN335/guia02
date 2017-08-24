@@ -1,0 +1,21 @@
+version:'2'
+services:
+	servuno:
+		image:'postgres-imagen'
+		build: ./postgres/.
+		conteiner_name:'psqlalpine-prn335​'
+		enviroment:
+		 -POSTGRES_USER='mortal2017'  
+		 -POSTGRES_PASSWORD='PRN335'  
+		 -POSTGRES_DB='posts' 
+		ports:
+		- '5432:5432'
+		volumes:
+		- /db:/var/lib/postgresql/data​
+	servdos:
+		image:'payara-imagen​'
+		buil: ./payara/.
+		conteiner_name:'payara-prn335​'
+		ports:
+		-'4848:8080'
+	
